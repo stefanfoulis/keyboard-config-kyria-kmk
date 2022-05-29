@@ -1,6 +1,4 @@
 # originally copied from https://github.com/KMKfw/kmk_firmware/blob/e7d306cf300b3ad2a3c1b148e9da64a368ed6ae8/boards/kyria/main.py
-from kyria_v1_rp2040 import KMKKeyboard
-
 from kmk.extensions.media_keys import MediaKeys
 from kmk.extensions.rgb import RGB, AnimationModes
 from kmk.keys import KC
@@ -8,6 +6,7 @@ from kmk.modules.encoder import EncoderHandler
 from kmk.modules.layers import Layers
 from kmk.modules.modtap import ModTap
 from kmk.modules.split import Split, SplitType
+from kyria_v2_nice_nano import KMKKeyboard
 
 keyboard = KMKKeyboard()
 keyboard.debug_enabled = True
@@ -38,6 +37,7 @@ ESC_LCTL = KC.MT(KC.ESC, KC.LCTL)
 QUOTE_RCTL = KC.MT(KC.QUOTE, KC.RCTL)
 ENT_LALT = KC.MT(KC.ENT, KC.LALT)
 MINUS_RCTL = KC.MT(KC.MINUS, KC.RCTL)
+# fmt: off
 keyboard.keymap = [
     [
         KC.TAB,        KC.Q,          KC.W,          KC.E,          KC.R,          KC.T,                                                                      KC.Y,          KC.U,          KC.I,          KC.O,          KC.P,          KC.BSPC,
@@ -82,6 +82,7 @@ keyboard.keymap = [
                                                      KC.TRNS,       KC.TRNS,       KC.TRNS,       KC.TRNS,       KC.TRNS,       KC.TRNS,       KC.TRNS,       KC.TRNS,       KC.TRNS,       KC.TRNS,
     ],
 ]
+# fmt: on
 
 # Uncomment below if using an encoder
 # Edit your encoder layout below
@@ -96,5 +97,5 @@ encoder_handler.map = (
 )
 keyboard.modules.append(encoder_handler)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     keyboard.go()
