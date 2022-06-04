@@ -16,7 +16,7 @@ keyboard.modules.append(ModTap())
 keyboard.extensions.append(MediaKeys())
 
 # Using drive names (KYRIAL, KYRIAR) to recognize sides; use split_side arg if you're not doing it
-split = Split(split_type=SplitType.UART, use_pio=True)
+split = Split(split_type=SplitType.BLE)
 keyboard.modules.append(split)
 
 # Uncomment below if you're using encoder
