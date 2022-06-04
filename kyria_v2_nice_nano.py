@@ -6,23 +6,44 @@ from kmk.scanners import intify_coordinate as ic
 
 
 class KMKKeyboard(_KMKKeyboard):
-    col_pins = (
-        board.D29,
-        board.D28,
-        board.D27,
-        board.D26,
-        board.D22,
-        board.D20,
-        board.D23,
-        board.D21,
+    col_pins = tuple(
+        reversed(
+            [
+                # board.P0_09,
+                # board.P0_10,
+                # board.P1_11,
+                # board.P1_13,
+                # board.P1_15,
+                # board.P0_02,
+                # board.P0_29,
+                # board.P0_31,
+                board.P0_31,
+                board.P0_29,
+                board.P0_02,
+                board.P1_15,
+                board.P1_13,
+                board.P1_11,
+                board.P0_10,
+                board.P0_09,
+            ]
+        )
     )
 
-    row_pins = (board.D8, board.D7, board.D6, board.D4)
+    row_pins = (
+        board.P1_04,
+        board.P0_11,
+        board.P1_00,
+        board.P0_22,
+        # board.P0_22,
+        # board.P1_00,
+        # board.P0_11,
+        # board.P1_04,
+    )
     diode_orientation = DiodeOrientation.COL2ROW
-    data_pin = board.RX
-    rgb_pixel_pin = board.D0
-    encoder_pin_0 = board.D9
-    encoder_pin_1 = board.D5
+    data_pin = board.P0_08
+    rgb_pixel_pin = board.P0_06
+    encoder_pin_0 = board.P1_06
+    encoder_pin_1 = board.P0_24
 
     coord_mapping = []
     coord_mapping.extend(ic(0, x, 8) for x in range(6))
