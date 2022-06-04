@@ -28,6 +28,8 @@ rgb_ext = RGB(
     pixel_pin=keyboard.rgb_pixel_pin,
     num_pixels=10,
     animation_mode=AnimationModes.BREATHING_RAINBOW,
+    val_default=10,
+    val_limit=32,
 )
 keyboard.extensions.append(rgb_ext)
 
