@@ -1,27 +1,61 @@
 # originally copied from https://github.com/KMKfw/kmk_firmware/blob/e7d306cf300b3ad2a3c1b148e9da64a368ed6ae8/boards/kyria/main.py
+import time
+
+import board
+import digitalio
+from split_side import SPLIT_SIDE
+
 from kmk.extensions.media_keys import MediaKeys
 from kmk.extensions.rgb import RGB, AnimationModes
 from kmk.keys import KC
 from kmk.modules.encoder import EncoderHandler
 from kmk.modules.layers import Layers
 from kmk.modules.modtap import ModTap
-from kmk.modules.split import Split, SplitType
-from kyria_v2_nice_nano import KMKKeyboard
+from kmk.modules.split import Split, SplitSide, SplitType
+from kyria_v2_nice_nano import KMKKeyboard, col_pins, row_pins
+
+print()
+print()
+print("=" * 80)
+print(f"{time.time()}")
+
+
+def detect_side():
+    import board
+    import digitalio
+    from storage import getmount
+
+    name = str(getmount("/").label)
+    pin1 = digitalio.DigitalInOut(board.P1_11)
+    pin2 = digitalio.DigitalInOut(board.P0_11)
+    print(name)
+    print(f"pin1 {str(pin1.value)}")
+    print(f"pin2 {str(pin2.value)}")
+    if not pin1.value and not pin2.value:
+        # both low means right
+        print("Right")
+        return SplitSide.RIGHT
+    else:
+        print("Left")
+        return SplitSide.LEFT
+
 
 keyboard = KMKKeyboard()
-keyboard.debug_enabled = True
+# keyboard.debug_enabled = True
+
 
 keyboard.modules.append(Layers())
 keyboard.modules.append(ModTap())
 keyboard.extensions.append(MediaKeys())
 
 # Using drive names (KYRIAL, KYRIAR) to recognize sides; use split_side arg if you're not doing it
-split = Split(split_type=SplitType.BLE)
+split = Split(
+    split_type=SplitType.BLE,
+    split_side=SPLIT_SIDE,
+    split_flip=False,
+    debug_enabled=True,
+)
 keyboard.modules.append(split)
-
-# Uncomment below if you're using encoder
-encoder_handler = EncoderHandler()
-encoder_handler.pins = ((keyboard.encoder_pin_0, keyboard.encoder_pin_1, None, False),)
 
 # Uncomment below if you're having RGB
 rgb_ext = RGB(
@@ -88,6 +122,9 @@ keyboard.keymap = [
 
 # Uncomment below if using an encoder
 # Edit your encoder layout below
+encoder_handler = EncoderHandler()
+encoder_handler.pins = ((keyboard.encoder_pin_0, keyboard.encoder_pin_1, None, False),)
+
 encoder_handler.map = (
     ((KC.VOLD, KC.VOLU),),
     ((KC.VOLD, KC.VOLU),),
@@ -99,5 +136,8 @@ encoder_handler.map = (
 )
 keyboard.modules.append(encoder_handler)
 
+
 if __name__ == "__main__":
+    # detect_side()
+    # print("Not starting... ready for REPL")
     keyboard.go()
