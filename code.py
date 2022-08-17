@@ -1,9 +1,9 @@
 # originally copied from https://github.com/KMKfw/kmk_firmware/blob/e7d306cf300b3ad2a3c1b148e9da64a368ed6ae8/boards/kyria/main.py
+try:
+    from typing import Type
+except ImportError:
+    pass
 import time
-
-import board
-import digitalio
-from split_side import SPLIT_SIDE
 
 from kmk.extensions.media_keys import MediaKeys
 from kmk.extensions.rgb import RGB, AnimationModes
@@ -11,36 +11,17 @@ from kmk.keys import KC
 from kmk.modules.encoder import EncoderHandler
 from kmk.modules.layers import Layers
 from kmk.modules.modtap import ModTap
-from kmk.modules.split import Split, SplitSide, SplitType
-from kyria_v2_nice_nano import KMKKeyboard, col_pins, row_pins
+from kmk.modules.split import Split, SplitType
+from kyria_v2_nice_nano import KMKKeyboard, get_side_aware_keyboard_class
 
 print()
 print()
 print("=" * 80)
 print(f"{time.time()}")
 
-
-def detect_side():
-    import board
-    import digitalio
-    from storage import getmount
-
-    name = str(getmount("/").label)
-    pin1 = digitalio.DigitalInOut(board.P1_11)
-    pin2 = digitalio.DigitalInOut(board.P0_11)
-    print(name)
-    print(f"pin1 {str(pin1.value)}")
-    print(f"pin2 {str(pin2.value)}")
-    if not pin1.value and not pin2.value:
-        # both low means right
-        print("Right")
-        return SplitSide.RIGHT
-    else:
-        print("Left")
-        return SplitSide.LEFT
-
-
-keyboard = KMKKeyboard()
+keyboard_class: Type[KMKKeyboard] = get_side_aware_keyboard_class()
+keyboard = keyboard_class()
+print(f"side: {keyboard.side} {keyboard}")
 # keyboard.debug_enabled = True
 
 
@@ -51,7 +32,7 @@ keyboard.extensions.append(MediaKeys())
 # Using drive names (KYRIAL, KYRIAR) to recognize sides; use split_side arg if you're not doing it
 split = Split(
     split_type=SplitType.BLE,
-    split_side=SPLIT_SIDE,
+    split_side=keyboard.side,
     split_flip=False,
     debug_enabled=True,
 )
