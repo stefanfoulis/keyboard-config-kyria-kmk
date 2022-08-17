@@ -54,18 +54,18 @@ else:
 LEFT = [
     # On the left side Columns are numbered from right to left. Col0 and Col1 don't
     # have any keys on Row0 and Row1.
-    [ 7,  6,  5,  4,  3,  2],  # ROW0
-    [15, 14, 13, 12, 11, 10],  # ROW1
-    [23, 22, 21, 20, 19, 18, 17, 16], # ROW2 (17 and 16 are the top thumb keys)
-    [            28, 27, 26, 25, 24],  # ROW3 (thumb keys)
+    [ 7,  6,  5,  4,  3,  2],          # ROW0
+    [15, 14, 13, 12, 11, 10],          # ROW1
+    [23, 22, 21, 20, 19, 18, 17, 16],  # ROW2 (17 and 16 are the top thumb keys)
+    [            29, 27, 26, 25, 24],  # ROW3 (thumb keys. 28 is skipped, idk why)
 ]
-RIGHT = [
+RIGHT = [  
     # On the right side Columns are numbered from left to right. Col0 and Col1 don't
     # have any keys on Row0 and Row1
     [         2,  3,  4,  5,  6,  7],  # ROW0
     [        10, 11, 12, 13, 14, 15],  # ROW1
-    [16, 17, 18, 19, 20, 21, 22, 23],  # ROW2
-    [24, 25, 26, 27, 28],              # ROW3
+    [16, 17, 18, 19, 20, 21, 22, 23],  # ROW2 (17 and 16 are the top thumb keys)
+    [24, 25, 26, 27, 29],              # ROW3 (thumb keys. 28 is skipped, idk why)
 ]
 # fmt: on
 
@@ -76,7 +76,7 @@ for row in range(len(row_pins)):
     # All the values on the right side come after all the value on the left.
     # So add the amount of keys on the left to the right.
     for cell in RIGHT[row]:
-        coord_mapping.append(cell + MATRIX_KEY_COUNT)
+        coord_mapping.append(MATRIX_KEY_COUNT + cell)
 print(coord_mapping)
 
 
