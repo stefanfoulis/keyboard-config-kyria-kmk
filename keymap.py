@@ -28,6 +28,9 @@ SPC_LSHIFT = KC.MT(KC.SPC, KC.LSHIFT)
 
 SHFT_TAB = KC.LSHIFT(KC.TAB)
 
+COPY = KC.LCTL(KC.INS)
+PASTE = KC.LSHIFT(KC.INS)
+
 # Window Tiling
 W_FULL = KC.LGUI(KC.UP)
 W_LEFT = KC.LGUI(KC.LEFT)
@@ -46,7 +49,7 @@ keymap = [
         KC.MPLY,    KC.Q,       KC.W,       KC.E,       KC.R,       KC.T,                                                       KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.VOLU,
         KC.MNXT,    A_SHIFT,    S_CTL,      D_ALT,      F_GUI,      KC.G,                                                       KC.H,       J_GUI,      K_ALT,      L_CTL,      SCLN_SHIFT, KC.VOLD,
         KC.MPRV,    KC.Z,       KC.X,       KC.C,       KC.V,       KC.B,        KC.LBRC,    KC.CAPS,    LRED,      KC.RBRC,    KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.MUTE,
-                                            W_TILING,   KC.LALT,     KC.LGUI,    SPC_LSHIFT, LBLUE,      LGREEN,    ENT_RSHIFT, KC.RCTL,    KC.RGUI,    KC.APP,
+                                            W_TILING,   KC.LALT,     KC.LGUI,    SPC_LSHIFT, LBLUE,      LGREEN,    ENT_RSHIFT, KC.RCTL,    COPY,    PASTE, 
     ],
     # BLUE
     [
@@ -57,7 +60,7 @@ keymap = [
     ],
     # GREEN
     [
-        KC.GRV,     KC.N1,      KC.N2,      KC.N3,      KC.N4,      KC.N5,                                                      KC.N6,      KC.N7,      KC.N8,      KC.N9,      KC.N0,      KC.EQL,
+        KC.DQT,     KC.N1,      KC.N2,      KC.N3,      KC.N4,      KC.N5,                                                      KC.N6,      KC.N7,      KC.N8,      KC.N9,      KC.N0,      KC.EQL,
         KC.TILD,    KC.EXLM,    KC.AT,      KC.HASH,    KC.DLR,     KC.PERC,                                                    KC.CIRC,    KC.AMPR,    KC.ASTR,    KC.LPRN,    KC.RPRN,    KC.PLUS,
         KC.PIPE,    KC.BSLS,    KC.COLN,    KC.SCLN,    KC.MINS,    KC.LBRC,    KC.LCBR,    KC.TRNS,    KC.TRNS,    KC.RCBR,    KC.RBRC,    KC.UNDS,    KC.COMM,    KC.DOT,     KC.SLSH,    KC.QUES,
                                             KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
@@ -74,6 +77,13 @@ keymap = [
         KC.TRNS,    KC.TRNS,    KC.TRNS,    W_SCR_UP,   KC.TRNS,    KC.TRNS,                                                    KC.TRNS,    KC.TRNS,    W_FULL,   KC.TRNS,    KC.TRNS,    KC.TRNS,
         KC.TRNS,    KC.TRNS,    W_SCR_LEFT, W_SCR_DWN,  W_SCR_RGHT, KC.TRNS,                                                    KC.TRNS,    W_LEFT,     W_NORM,   W_RIGHT,    KC.TRNS,    KC.TRNS,
         KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.MPLY,  KC.TRNS,    KC.TRNS,    KC.TRNS,
+                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+    ],
+    # Neo symbols
+    [
+        KC.TRNS,    KC.ESC,     KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,                                                    KC.PGUP,    KC.HOME,    KC.UP,      KC.END,     KC.TRNS,    KC.DEL,
+        KC.TRNS,    SHFT_TAB,   KC.TAB,     KC.TRNS,    KC.TRNS,    KC.TRNS,                                                    KC.PGDN,    KC.LEFT,    KC.DOWN,    KC.RGHT,    KC.TRNS,    KC.INS,
+        KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.SLCK,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.BSPC,    KC.DEL,     KC.TRNS,    KC.TRNS,    KC.PSCR,
                                             KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
     ],
 ]
