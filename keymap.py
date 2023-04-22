@@ -1,4 +1,5 @@
 from kmk.keys import KC
+from kmk.handlers.sequences import unicode_string_sequence as ucs
 
 __all__ = ["keymap"]
 
@@ -42,27 +43,32 @@ W_SCR_DWN = KC.LSHIFT(KC.LGUI(KC.DOWN))
 W_SCR_LEFT = KC.LSHIFT(KC.LGUI(KC.LEFT))
 W_SCR_RGHT = KC.LSHIFT(KC.LGUI(KC.RGHT))
 
+DEG = ucs("°")
+EUR = ucs("€")
+POUND = ucs("£")
+
+
 
 # fmt: off
 keymap = [
     [
         KC.ESC,     KC.Q,       KC.W,       KC.E,       KC.R,       KC.T,                                                               KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.BSPC,
-        KC.SPC,     KC.A,       KC.S,       KC.D,       KC.F,       KC.G,                                                               KC.H,       KC.J,       KC.K,       KC.L,       KC.SCLN,    KC.ENT,
-        KC.LSHIFT,  KC.Z,       KC.X,       KC.C,       KC.V,       KC.B,        KC.MPLY,    KC.MUTE,            KC.VOLD,   KC.VOLU,    KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.RSHIFT,
-                                            W_TILING,   KC.LALT,    KC.LGUI,     KC.LCTL,    LBLUE,              LGREEN,    LRED,       KC.RCTL,    COPY,       PASTE, 
+        KC.LSHIFT,  KC.A,       KC.S,       KC.D,       KC.F,       KC.G,                                                               KC.H,       KC.J,       KC.K,       KC.L,       KC.SCLN,    KC.RSHIFT,
+        KC.LCTL,    KC.Z,       KC.X,       KC.C,       KC.V,       KC.B,        KC.LGUI,    KC.MUTE,            KC.MPLY,   KC.LGUI,    KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.RCTL,
+                                            KC.LALT,    LRED,       LGREEN,      KC.SPC,     LBLUE,              LBLUE,     KC.ENT,     LGREEN,     LRED,       KC.RALT, 
     ],
     # BLUE (movement)
     [
-        KC.TRNS,    KC.ESC,     KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,                                                            KC.PGUP,    KC.BSPC,    KC.UP,      KC.DEL,     KC.PGDOWN,  KC.TRNS,
-        KC.TRNS,    SHFT_TAB,   KC.TAB,     KC.COPY,    KC.PASTE,   KC.PSCREEN,                                                         KC.HOME,    KC.LEFT,    KC.DOWN,    KC.RGHT,    KC.END,     KC.TRNS,
-        KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    SHFT_TAB,   KC.TAB,     KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+        KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,                                                            KC.PGUP,    SHFT_TAB,   KC.UP,      KC.TAB,     KC.TRNS,    KC.TRNS,
+        KC.TRNS,    KC.TRNS,    KC.TRNS,    COPY,       PASTE,      KC.PSCREEN,                                                         KC.BSPC,    KC.LEFT,    KC.DOWN,    KC.RGHT,    KC.DEL,     KC.TRNS,
+        KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.PGDOWN,  KC.HOME,    KC.TRNS,    KC.END,     KC.TRNS,    KC.TRNS,
                                             KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
     ],
     # GREEN (symbols)
     [
         KC.TRNS,    KC.EXLM,    KC.AT,      KC.HASH,    KC.DLR,     KC.PERC,                                                            KC.CIRC,    KC.AMPR,    KC.ASTR,    KC.MINUS,   KC.PLUS,    KC.TRNS,
-        KC.TRNS,    KC.QUOTE,   KC.DQUO,    KC.BSLASH,  KC.LPRN,    KC.LCBR,                                                            KC.RCBR,    KC.RPRN,    KC.SLSH,    KC.UNDS,    KC.EQL,     KC.TRNS,
-        KC.TRNS,    KC.GRAVE,   KC.TILD,    KC.PIPE,    KC.LBRC,    KC.LABK,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.RABK,    KC.RBRC,    KC.COMM,    KC.DOT,     KC.QUES,    KC.TRNS,
+        KC.TRNS,    KC.QUOTE,   KC.DQUO,    KC.BSLASH,  KC.LPRN,    KC.LCBR,                                                            KC.RCBR,    KC.RPRN,    KC.SLSH,    KC.UNDS,    KC.COLON,   KC.EQL,
+        KC.TRNS,    KC.GRAVE,   KC.TILD,    KC.PIPE,    KC.LBRC,    KC.LABK,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.RABK,    KC.RBRC,    DEG,        EUR,        KC.QUES,    KC.TRNS,
                                             KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
     ],
     # RED (numbers and F*)
