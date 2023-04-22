@@ -46,45 +46,66 @@ W_SCR_RGHT = KC.LSHIFT(KC.LGUI(KC.RGHT))
 # fmt: off
 keymap = [
     [
-        KC.MPLY,    KC.Q,       KC.W,       KC.E,       KC.R,       KC.T,                                                       KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.VOLU,
-        KC.MNXT,    A_SHIFT,    S_CTL,      D_ALT,      F_GUI,      KC.G,                                                       KC.H,       J_GUI,      K_ALT,      L_CTL,      SCLN_SHIFT, KC.VOLD,
-        KC.MPRV,    KC.Z,       KC.X,       KC.C,       KC.V,       KC.B,        KC.LBRC,    KC.CAPS,    LRED,      KC.RBRC,    KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.MUTE,
-                                            W_TILING,   KC.LALT,     KC.LGUI,    SPC_LSHIFT, LBLUE,      LGREEN,    ENT_RSHIFT, KC.RCTL,    COPY,    PASTE, 
+        KC.ESC,     KC.Q,       KC.W,       KC.E,       KC.R,       KC.T,                                                               KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.BSPC,
+        KC.SPC,     KC.A,       KC.S,       KC.D,       KC.F,       KC.G,                                                               KC.H,       KC.J,       KC.K,       KC.L,       KC.SCLN,    KC.ENT,
+        KC.LSHIFT,  KC.Z,       KC.X,       KC.C,       KC.V,       KC.B,        KC.MPLY,    KC.MUTE,            KC.VOLD,   KC.VOLU,    KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.RSHIFT,
+                                            W_TILING,   KC.LALT,    KC.LGUI,     KC.LCTL,    LBLUE,              LGREEN,    LRED,       KC.RCTL,    COPY,       PASTE, 
     ],
-    # BLUE
+    # BLUE (movement)
     [
-        KC.TRNS,    KC.ESC,     KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,                                                    KC.PGUP,    KC.HOME,    KC.UP,      KC.END,     KC.TRNS,    KC.DEL,
-        KC.TRNS,    SHFT_TAB,   KC.TAB,     KC.TRNS,    KC.TRNS,    KC.TRNS,                                                    KC.PGDN,    KC.LEFT,    KC.DOWN,    KC.RGHT,    KC.TRNS,    KC.INS,
-        KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.SLCK,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.BSPC,    KC.DEL,     KC.TRNS,    KC.TRNS,    KC.PSCR,
-                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+        KC.TRNS,    KC.ESC,     KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,                                                            KC.PGUP,    KC.BSPC,    KC.UP,      KC.DEL,     KC.PGDOWN,  KC.TRNS,
+        KC.TRNS,    SHFT_TAB,   KC.TAB,     KC.COPY,    KC.PASTE,   KC.PSCREEN,                                                         KC.HOME,    KC.LEFT,    KC.DOWN,    KC.RGHT,    KC.END,     KC.TRNS,
+        KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    SHFT_TAB,   KC.TAB,     KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
     ],
-    # GREEN
+    # GREEN (symbols)
     [
-        KC.DQT,     KC.N1,      KC.N2,      KC.N3,      KC.N4,      KC.N5,                                                      KC.N6,      KC.N7,      KC.N8,      KC.N9,      KC.N0,      KC.EQL,
-        KC.TILD,    KC.EXLM,    KC.AT,      KC.HASH,    KC.DLR,     KC.PERC,                                                    KC.CIRC,    KC.AMPR,    KC.ASTR,    KC.LPRN,    KC.RPRN,    KC.PLUS,
-        KC.PIPE,    KC.BSLS,    KC.COLN,    KC.SCLN,    KC.MINS,    KC.LBRC,    KC.LCBR,    KC.TRNS,    KC.TRNS,    KC.RCBR,    KC.RBRC,    KC.UNDS,    KC.COMM,    KC.DOT,     KC.SLSH,    KC.QUES,
-                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+        KC.TRNS,    KC.EXLM,    KC.AT,      KC.HASH,    KC.DLR,     KC.PERC,                                                            KC.CIRC,    KC.AMPR,    KC.ASTR,    KC.MINUS,   KC.PLUS,    KC.TRNS,
+        KC.TRNS,    KC.QUOTE,   KC.DQUO,    KC.BSLASH,  KC.LPRN,    KC.LCBR,                                                            KC.RCBR,    KC.RPRN,    KC.SLSH,    KC.UNDS,    KC.EQL,     KC.TRNS,
+        KC.TRNS,    KC.GRAVE,   KC.TILD,    KC.PIPE,    KC.LBRC,    KC.LABK,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.RABK,    KC.RBRC,    KC.COMM,    KC.DOT,     KC.QUES,    KC.TRNS,
+                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
     ],
-    # RED
+    # RED (numbers and F*)
     [
-        KC.TRNS,    KC.F9,      KC.F10,     KC.F11,     KC.F12,     KC.TRNS,                                                    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
-        KC.TRNS,    KC.F5,      KC.F6,      KC.F7,      KC.F8,      KC.TRNS,                                                    KC.TRNS,    KC.RSFT,    KC.RCTL,    KC.LALT,    KC.RGUI,    KC.TRNS,
-        KC.TRNS,    KC.F1,      KC.F2,      KC.F3,      KC.F4,      KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
-                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+        KC.TRNS,    KC.F1,      KC.F2,      KC.F3,      KC.F4,      KC.F5,                                                              KC.F6,      KC.F7,      KC.F8,      KC.F9,      KC.F10,     KC.TRNS,
+        KC.TRNS,    KC.N1,      KC.N2,      KC.N3,      KC.N4,      KC.N5,                                                              KC.N6,      KC.N7,      KC.N8,      KC.N9,      KC.N0,      KC.TRNS,
+        KC.TRNS,    KC.F11,     KC.F12,     KC.F13,     KC.F14,     KC.F15,     KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.F16,     KC.F17,     KC.F18,     KC.F19,     KC.F20,     KC.TRNS,
+                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
     ],
     # Window Tiling
     [
-        KC.TRNS,    KC.TRNS,    KC.TRNS,    W_SCR_UP,   KC.TRNS,    KC.TRNS,                                                    KC.TRNS,    KC.TRNS,    W_FULL,   KC.TRNS,    KC.TRNS,    KC.TRNS,
-        KC.TRNS,    KC.TRNS,    W_SCR_LEFT, W_SCR_DWN,  W_SCR_RGHT, KC.TRNS,                                                    KC.TRNS,    W_LEFT,     W_NORM,   W_RIGHT,    KC.TRNS,    KC.TRNS,
-        KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.MPLY,  KC.TRNS,    KC.TRNS,    KC.TRNS,
-                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+        KC.TRNS,    KC.TRNS,    KC.TRNS,    W_SCR_UP,   KC.TRNS,    KC.TRNS,                                                            KC.TRNS,    KC.TRNS,    W_FULL,   KC.TRNS,    KC.TRNS,    KC.TRNS,
+        KC.TRNS,    KC.TRNS,    W_SCR_LEFT, W_SCR_DWN,  W_SCR_RGHT, KC.TRNS,                                                            KC.TRNS,    W_LEFT,     W_NORM,   W_RIGHT,    KC.TRNS,    KC.TRNS,
+        KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.MPLY,  KC.TRNS,    KC.TRNS,    KC.TRNS,
+                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
     ],
     # Neo symbols
     [
-        KC.TRNS,    KC.ESC,     KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,                                                    KC.PGUP,    KC.HOME,    KC.UP,      KC.END,     KC.TRNS,    KC.DEL,
-        KC.TRNS,    SHFT_TAB,   KC.TAB,     KC.TRNS,    KC.TRNS,    KC.TRNS,                                                    KC.PGDN,    KC.LEFT,    KC.DOWN,    KC.RGHT,    KC.TRNS,    KC.INS,
-        KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.SLCK,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.BSPC,    KC.DEL,     KC.TRNS,    KC.TRNS,    KC.PSCR,
-                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+        KC.TRNS,    KC.ESC,     KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,                                                            KC.PGUP,    KC.HOME,    KC.UP,      KC.END,     KC.TRNS,    KC.DEL,
+        KC.TRNS,    SHFT_TAB,   KC.TAB,     KC.TRNS,    KC.TRNS,    KC.TRNS,                                                            KC.PGDN,    KC.LEFT,    KC.DOWN,    KC.RGHT,    KC.TRNS,    KC.INS,
+        KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.SLCK,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.BSPC,    KC.DEL,     KC.TRNS,    KC.TRNS,    KC.PSCR,
+                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+    ],
+    # Alternate base with home modifier rows
+    [
+        KC.MPLY,    KC.Q,       KC.W,       KC.E,       KC.R,       KC.T,                                                               KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.VOLU,
+        KC.MNXT,    A_SHIFT,    S_CTL,      D_ALT,      F_GUI,      KC.G,                                                               KC.H,       J_GUI,      K_ALT,      L_CTL,      SCLN_SHIFT, KC.VOLD,
+        KC.MPRV,    KC.Z,       KC.X,       KC.C,       KC.V,       KC.B,        KC.LBRC,    KC.CAPS,            LRED,      KC.RBRC,    KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.MUTE,
+                                            W_TILING,   KC.LALT,     KC.LGUI,    SPC_LSHIFT, LBLUE,              LGREEN,    ENT_RSHIFT, KC.RCTL,    COPY,    PASTE, 
+    ],
+    # GREEN (OLD)
+    [
+        KC.DQT,     KC.N1,      KC.N2,      KC.N3,      KC.N4,      KC.N5,                                                              KC.N6,      KC.N7,      KC.N8,      KC.N9,      KC.N0,      KC.EQL,
+        KC.TILD,    KC.EXLM,    KC.AT,      KC.HASH,    KC.DLR,     KC.PERC,                                                            KC.CIRC,    KC.AMPR,    KC.ASTR,    KC.LPRN,    KC.RPRN,    KC.PLUS,
+        KC.PIPE,    KC.BSLS,    KC.COLN,    KC.SCLN,    KC.MINS,    KC.LBRC,    KC.LCBR,    KC.TRNS,            KC.TRNS,    KC.RCBR,    KC.RBRC,    KC.UNDS,    KC.COMM,    KC.DOT,     KC.SLSH,    KC.QUES,
+                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+    ],
+    # RED (OLD)
+    [
+        KC.TRNS,    KC.F9,      KC.F10,     KC.F11,     KC.F12,     KC.TRNS,                                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+        KC.TRNS,    KC.F5,      KC.F6,      KC.F7,      KC.F8,      KC.TRNS,                                                            KC.TRNS,    KC.RSFT,    KC.RCTL,    KC.LALT,    KC.RGUI,    KC.TRNS,
+        KC.TRNS,    KC.F1,      KC.F2,      KC.F3,      KC.F4,      KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
+                                            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
     ],
 ]
 # fmt: on
