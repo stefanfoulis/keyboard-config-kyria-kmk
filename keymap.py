@@ -54,7 +54,7 @@ keymap = [
     [
         KC.ESC,     KC.Q,       KC.W,       KC.E,       KC.R,       KC.T,                                                               KC.Y,       KC.U,       KC.I,       KC.O,       KC.P,       KC.BSPC,
         KC.LSHIFT,  KC.A,       KC.S,       KC.D,       KC.F,       KC.G,                                                               KC.H,       KC.J,       KC.K,       KC.L,       KC.SCLN,    KC.RSHIFT,
-        KC.LCTL,    KC.Z,       KC.X,       KC.C,       KC.V,       KC.B,        KC.LGUI,    KC.MUTE,            KC.MPLY,   KC.LGUI,    KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.RCTL,
+        KC.LCTL,    KC.Z,       KC.X,       KC.C,       KC.V,       KC.B,        KC.LGUI,    KC.MUTE,            KC.MPLY,   KC.LGUI,    KC.N,       KC.M,       KC.COMM,    KC.DOT,     KC.SLSH,    KC.LCTL,
                                             KC.LALT,    LRED,       LGREEN,      KC.SPC,     LBLUE,              LBLUE,     KC.ENT,     LGREEN,     LRED,       KC.RALT, 
     ],
     # BLUE (movement)
