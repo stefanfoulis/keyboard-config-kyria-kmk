@@ -60,7 +60,7 @@ keymap = [
     # BLUE (movement)
     [
         KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,                                                            KC.PGUP,    SHFT_TAB,   KC.UP,      KC.TAB,     KC.TRNS,    KC.TRNS,
-        KC.TRNS,    KC.TRNS,    KC.TRNS,    COPY,       PASTE,      KC.PSCREEN,                                                         KC.BSPC,    KC.LEFT,    KC.DOWN,    KC.RGHT,    KC.DEL,     KC.TRNS,
+        KC.TRNS,    KC.VOLD,    KC.VOLU,    COPY,       PASTE,      KC.PSCREEN,                                                         KC.BSPC,    KC.LEFT,    KC.DOWN,    KC.RGHT,    KC.DEL,     KC.TRNS,
         KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.PGDOWN,  KC.HOME,    KC.TRNS,    KC.END,     KC.TRNS,    KC.TRNS,
                                             KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,            KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,    KC.TRNS,
     ],
